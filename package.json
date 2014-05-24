@@ -1,0 +1,20 @@
+{
+  "name": "gitbook-plugin-share",
+  "description": "Adds social share buttons to your gitbook",
+  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": "*"
+  },
+  "homepage": "https://github.com/bguiz/gitbook-plugin-share",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bguiz/gitbook-plugin-share.git"
+  },
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/bguiz/gitbook-plugin-share/issues"
+  },
+  "readmeFilename": "README.md",
+  "_id": "gitbook-plugin-share@0.0.1"
+}
