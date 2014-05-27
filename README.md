@@ -30,16 +30,36 @@ You can configure the plugin is `book.json`:
     "pluginsConfig": {
         "share": {
             "reddit": {
-	            "newwindow": 1
-	        }
+                "newwindow": 1
+            }
         }
     }
 }
 ```
 
 * Reddit
-	* See [Reddit Buttons](http://www.reddit.com/buttons/ "Reddit buttons")
-	* Looks for the section "customizing the look of your buttons", available options match these
+	* See [Reddit Buttons](http://www.reddit.com/buttons/)
+	* Supported settings: All listed under the section "customizing the look of your buttons"
+* Google+
+    * Supported settings: `url`
+* Twitter
+    * See [Twitter Buttons](https://twitter.com/about/resources/buttons#tweet)
+    * Supported settings: `url`
+* Facebook
+    * See [Facebook Buttons](https://developers.facebook.com/docs/reference/plugins/like/)
+    * Supported settings: `url`
+* LinkedIn
+    * See [LinkedIn Buttons](https://developer.linkedin.com/plugins/share-plugin-generator)
+    * Supported settings: `url`, `lang`
 
-Note that as of now, only reddit share button works.
-Contributions welcome!
+## Licence
+
+GPLv3
+
+## Requests
+
+If you would like to see share buttons for different sites,
+or see more options supported for the sites already there,
+create a new issue.
+
+Contributions welcome, of course!
