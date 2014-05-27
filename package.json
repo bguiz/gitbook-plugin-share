@@ -2,9 +2,9 @@
   "name": "gitbook-plugin-share",
   "description": "Adds social share buttons to your gitbook",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
-    "gitbook": "*"
+    "gitbook": ">=0.4.7"
   },
   "homepage": "https://github.com/bguiz/gitbook-plugin-share",
   "repository": {
@@ -15,6 +15,20 @@
   "bugs": {
     "url": "https://github.com/bguiz/gitbook-plugin-share/issues"
   },
-  "readmeFilename": "README.md",
-  "_id": "gitbook-plugin-share@0.0.1"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bguiz",
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "share",
+    "buttons",
+    "social",
+    "reddit",
+    "google+",
+    "facebook",
+    "twitter",
+    "linkedin"
+  ]
 }
