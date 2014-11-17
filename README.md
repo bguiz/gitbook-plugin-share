@@ -3,6 +3,8 @@
 This plugin allows you to add social shared buttons to the bottom of every page
 in your gitbook.
 
+![Screenshot of gitbook-plugin-share](./screenshot.png)
+
 ## Installation
 
 Install as a global NodeJs package.
