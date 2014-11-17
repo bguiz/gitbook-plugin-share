@@ -9,26 +9,24 @@ module.exports = {
     },
     hooks: {
         "page:before": function(page) {
-            console.log('Running share plugin', page.path);
             page.content += '\n\n<div class="gitbook-share"></div>\n\n';
             return page;
         },
         "page:after": function(page) {
-            var config = this.options.pluginsConfig.share || {};
-            if (!config) throw "Need to configure at least one share option";
+            var config = this.options.pluginsConfig.share;
+            if (!config) {
+                throw "Need to configure at least one share option";
+            }
             out = '\n\n<div class="gitbook-share">';
             count = 0;
 
             Object.getOwnPropertyNames(config).forEach(function(key) {
                 var cfg = config[key];
-                // console.log('key', key);
-
-                //TODO twitter button not yet working properly
+                var lang, url;
                 if (key == 'twitter') {
-                    // console.log('Running share plugin twitter');
                     var via = cfg.via ? ' data-via="'+cfg.via+'"' : '';
-                    var lang = cfg.lang ? ' data-lang="'+cfg.lang+'"' : '';
-                    var url = cfg.url ? ' data-url="'+cfg.url+'"' : '';
+                    lang = cfg.lang ? ' data-lang="'+cfg.lang+'"' : '';
+                    url = cfg.url ? ' data-url="'+cfg.url+'"' : '';
                     out += '\n<span class="twitter">';
                     out +=
                         '\n<a href="https://twitter.com/share" class="twitter-share-button"'+url+via+lang+'>Tweet</a>'+
@@ -38,13 +36,12 @@ module.exports = {
                 }
 
                 if (key == 'reddit') {
-                    // console.log('Running share plugin reddit');
+                    //NOTE reddit plugin is inserted by plugin.js
                     out += '\n<span class="reddit"></span>';
                     ++count;
                 }
 
                 if (key == 'facebook') {
-                    // console.log('Running share plugin facebook');
                     var loc =
                         'http://www.facebook.com/plugins/like.php?href='+
                         encodeURIComponent(cfg.url ? cfg.url : '') +
@@ -58,7 +55,6 @@ module.exports = {
                     ++count;
                 }
                 if (key == 'googleplus') {
-                    // console.log('Running share plugin googleplus');
                     out += '\n<span class="googleplus">';
                     out +=
                         '\n<div class="g-plusone" data-size="'+(cfg.size ? cfg.size : 'medium')+
@@ -72,12 +68,12 @@ module.exports = {
                     ++count;
                 }
                 if (key == 'linkedin') {
-                    // console.log('Running share plugin linkedin');
                     out += '\n<span class="linkedin">';
-                    var lang = cfg.lang || 'en_US';
-                    var url = cfg.url ? ' data-url="'+cfg.url+'"' : '';
+                    lang = cfg.lang || 'en_US';
+                    url = cfg.url ? ' data-url="'+cfg.url+'"' : '';
                     out +=
-                        '\n<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: '+lang+'</script>' +
+                        '\n<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: '+
+                            lang+'</script>' +
                         '\n<script type="IN/Share"'+url+' data-counter="right"></script>';
                     out += '\n</span>';
                 }
