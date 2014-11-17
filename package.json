@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-share",
   "description": "Adds social share buttons to your gitbook",
   "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "gitbook": ">=0.4.7"
   },
